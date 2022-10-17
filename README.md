@@ -1,0 +1,1 @@
+A set of exercises from the Odin Project to practice dynamic user interface interactions with JS.
