@@ -1,0 +1,7 @@
+* {
+  color: purple;
+}
+
+#menu, #genres {
+  display: none;
+}
