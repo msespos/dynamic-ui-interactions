@@ -11,7 +11,7 @@
   justify-content: space-around;
 }
 
-#eye-black, #turkey-black, #hand-black, #phone-black, #triforce-black {
+#eye-white, #turkey-black, #hand-black, #phone-black, #triforce-black {
   display: none;
 }
 
@@ -21,4 +21,20 @@
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+}
+
+.pages {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#turkey-page, #hand-page, #phone-page, #triforce-page {
+  display: none;
+}
+
+.page {
+  color: purple;
+  font-size: xxx-large;
+  font-family: priveleged-elite;
+  padding: 15px;
 }

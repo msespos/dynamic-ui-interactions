@@ -1,16 +1,18 @@
-const iconPrefixes = ["eye", "turkey", "hand", "phone", "triforce"];
+const prefixes = ["eye", "turkey", "hand", "phone", "triforce"];
 
-const clearIcons = () => {
-  iconPrefixes.forEach((prefix) => {
+const clearIconsAndPages = () => {
+  prefixes.forEach((prefix) => {
     document.getElementById(prefix + "-black").style.display = "none";
     document.getElementById(prefix + "-white").style.display = "block";
+    document.getElementById(prefix + "-page").style.display = "none";
   });
 };
 
-iconPrefixes.forEach((prefix) => {
+prefixes.forEach((prefix) => {
   document.getElementById(prefix + "-white").onclick = () => {
-    clearIcons();
+    clearIconsAndPages();
     document.getElementById(prefix + "-white").style.display = "none";
     document.getElementById(prefix + "-black").style.display = "block";
+    document.getElementById(prefix + "-page").style.display = "block";
   };
 });
