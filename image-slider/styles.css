@@ -1,3 +1,43 @@
 * {
   color: purple;
 }
+
+.images-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  z-index: 9;
+}
+
+.frame-left {
+  background-color: aqua;
+  height: 300px;
+  width: 746px;
+  position: absolute;
+  top: 100;
+  left: 0;
+  z-index: 9;
+}
+
+.frame-right {
+  background-color: aqua;
+  height: 300px;
+  width: 746px;
+  justify-content: right;
+  position: absolute;
+  top: 100;
+  right: 0;
+  z-index: 9;
+}
+
+.images {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.image {
+  height: 300px;
+}
