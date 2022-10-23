@@ -1,5 +1,6 @@
 * {
   color: purple;
+  background-color: aqua;
 }
 
 .images-container {
@@ -10,29 +11,41 @@
   z-index: 9;
 }
 
-.frame-left {
-  background-color: aqua;
+.frame {
+  background-color: aqua;  
   height: 300px;
   width: 746px;
   position: absolute;
-  top: 100;
+  top: 100px;
+  z-index: 5;
+}
+
+.frame-left {
   left: 0;
-  z-index: 9;
 }
 
 .frame-right {
-  background-color: aqua;
-  height: 300px;
-  width: 746px;
-  justify-content: right;
-  position: absolute;
-  top: 100;
   right: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 225px;
   z-index: 9;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 675px;
+}
+
+.arrow-right {
+  right: 675px;
 }
 
 .images {
   position: absolute;
+  right: -454px;
   display: flex;
   justify-content: center;
   z-index: 0;
