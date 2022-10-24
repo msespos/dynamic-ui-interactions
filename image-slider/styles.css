@@ -14,8 +14,8 @@
 .frame {
   background-color: aqua;  
   height: 300px;
-  width: 746px;
-  position: absolute;
+  max-width: 746px;
+  position: relative;
   top: 100px;
   z-index: 5;
 }
@@ -30,17 +30,17 @@
 
 .arrow {
   position: absolute;
-  top: 225px;
+  top: 0px;
   z-index: 9;
   cursor: pointer;
 }
 
 .arrow-left {
-  left: 675px;
+  left: -60px;
 }
 
 .arrow-right {
-  right: 675px;
+  right: -60px;
 }
 
 .images-wrapper {
