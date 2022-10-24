@@ -43,9 +43,16 @@
   right: 675px;
 }
 
+.images-wrapper {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
 .images {
   position: absolute;
-  right: -454px;
+  right: -1200px;
   display: flex;
   justify-content: center;
   z-index: 0;
