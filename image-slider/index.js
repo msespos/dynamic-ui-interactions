@@ -1,7 +1,7 @@
 document.getElementById("arrow-left").onclick = () => {
   let img = document.querySelector(".images");
   let imgStyleRight = getComputedStyle(img).right;
-  if (parseInt(imgStyleRight) >= -900) {
+  if (parseInt(imgStyleRight) > -751) {
     img.style.right = (parseInt(imgStyleRight) - 250) + "px";
   }
 };
@@ -9,7 +9,7 @@ document.getElementById("arrow-left").onclick = () => {
 document.getElementById("arrow-right").onclick = () => {
   let img = document.querySelector(".images");
   let imgStyleRight = getComputedStyle(img).right;
-  if (parseInt(imgStyleRight) <= -250) {
+  if (parseInt(imgStyleRight) < 0) {
     img.style.right = (parseInt(imgStyleRight) + 250) + "px";
   }
 };
