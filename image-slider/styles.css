@@ -1,6 +1,6 @@
 * {
   color: purple;
-  background-color: aqua;
+  background-color: lightgray;
 }
 
 .images-container {
@@ -12,7 +12,7 @@
 }
 
 .frame {
-  background-color: aqua;  
+  background-color: lightgray;
   height: 300px;
   max-width: 746px;
   position: relative;
