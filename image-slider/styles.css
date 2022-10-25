@@ -62,3 +62,16 @@
 .image {
   height: 250px;
 }
+
+.circles {
+  display: flex;
+  justify-content: center;
+  gap: 5px
+}
+
+.circle {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
