@@ -75,3 +75,7 @@
   border: 1px solid black;
   border-radius: 50%;
 }
+
+#first-circle {
+  background-color: gray;
+}
