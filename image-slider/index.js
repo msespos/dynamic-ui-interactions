@@ -1,3 +1,23 @@
+const slideImg = (img, imgStyleRight, index) => {
+  if (index === 0) {
+    if (parseInt(imgStyleRight) > -751) {
+      const imgStyleRightShifted = (parseInt(imgStyleRight) - 250) + "px";
+      img.style.right = imgStyleRightShifted;
+      clearCircleBackgrounds();
+      const currentCircle = circles[startingPoints.indexOf(imgStyleRightShifted)];
+      document.getElementById(currentCircle).style.backgroundColor = "gray";
+    }
+  } else if (index === 1) {
+    if (parseInt(imgStyleRight) < 0) {
+      const imgStyleRightShifted = (parseInt(imgStyleRight) + 250) + "px";
+      img.style.right = imgStyleRightShifted;
+      clearCircleBackgrounds();
+      const currentCircle = circles[startingPoints.indexOf(imgStyleRightShifted)];
+      document.getElementById(currentCircle).style.backgroundColor = "gray";
+    }
+  }
+}
+
 const arrows = ["arrow-left", "arrow-right"];
 
 arrows.forEach((arrow, index) => {
@@ -5,15 +25,7 @@ arrows.forEach((arrow, index) => {
     document.querySelector(".images").style.transition = "right 0.75s linear";
     let img = document.querySelector(".images");
     let imgStyleRight = getComputedStyle(img).right;
-    if (index === 0) {
-      if (parseInt(imgStyleRight) > -751) {
-        img.style.right = (parseInt(imgStyleRight) - 250) + "px";
-      }
-    } else if (index === 1) {
-      if (parseInt(imgStyleRight) < 0) {
-        img.style.right = (parseInt(imgStyleRight) + 250) + "px";
-      }
-    }
+    slideImg(img, imgStyleRight, index);
   };
 });
 
