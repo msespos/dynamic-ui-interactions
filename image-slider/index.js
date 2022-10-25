@@ -1,22 +1,20 @@
-const slideImg = (img, imgStyleRight, index) => {
+let target = 0;
+
+const slideImg = (img, index) => {
   if (index === 0) {
-    if (parseInt(imgStyleRight) > -751) {
-      const imgStyleRightShifted = (parseInt(imgStyleRight) - 250) + "px";
-      img.style.right = imgStyleRightShifted;
-      clearCircleBackgrounds();
-      const currentCircle = circles[startingPoints.indexOf(imgStyleRightShifted)];
-      document.getElementById(currentCircle).style.backgroundColor = "gray";
+    if (target > 0) {
+      target -= 1;
     }
   } else if (index === 1) {
-    if (parseInt(imgStyleRight) < 0) {
-      const imgStyleRightShifted = (parseInt(imgStyleRight) + 250) + "px";
-      img.style.right = imgStyleRightShifted;
-      clearCircleBackgrounds();
-      const currentCircle = circles[startingPoints.indexOf(imgStyleRightShifted)];
-      document.getElementById(currentCircle).style.backgroundColor = "gray";
+    if (target < 4) {
+      target += 1;
     }
   }
-}
+  img.style.right = startingPoints[target]
+  clearCircleBackgrounds();
+  const currentCircle = circles[target];
+  document.getElementById(currentCircle).style.backgroundColor = "gray";
+};
 
 const arrows = ["arrow-left", "arrow-right"];
 
@@ -24,8 +22,7 @@ arrows.forEach((arrow, index) => {
   document.getElementById(arrow).onclick = () => {
     document.querySelector(".images").style.transition = "right 0.75s linear";
     let img = document.querySelector(".images");
-    let imgStyleRight = getComputedStyle(img).right;
-    slideImg(img, imgStyleRight, index);
+    slideImg(img, index);
   };
 });
 
