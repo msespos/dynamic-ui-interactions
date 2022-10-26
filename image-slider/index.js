@@ -44,3 +44,15 @@ circles.forEach((circle, index) => {
     document.getElementById(circle).style.backgroundColor = "gray";
   };
 });
+
+let img = document.querySelector(".images");
+
+const timedSlide = (i) => {
+  setTimeout(() => {
+    slideImg(img, 1);
+  }, 5000 * i);
+}
+
+for (let i = 1; i < 5; i++) {
+  timedSlide(i);
+}
