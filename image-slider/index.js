@@ -8,8 +8,11 @@ const slideImg = (img, index) => {
   } else if (index === 1) {
     if (target < 4) {
       target += 1;
+    } else if (target === 4) {
+      target = 0;
     }
   }
+  img.style.transition = "right 0.75s linear";
   img.style.right = startingPoints[target]
   clearCircleBackgrounds();
   const currentCircle = circles[target];
@@ -38,21 +41,25 @@ const startingPoints = ["-1000px", "-750px", "-500px", "-250px", "0px"];
 
 circles.forEach((circle, index) => {
   document.getElementById(circle).onclick = () => {
+    clearTimeout(this.timeout);
     document.querySelector(".images").style.transition = "none";
     document.querySelector(".images").style.right = startingPoints[index];
     clearCircleBackgrounds();
     document.getElementById(circle).style.backgroundColor = "gray";
+    setTimeout(() => {
+      target = index;
+      timedSlide(images);
+    }, 15000);
   };
 });
 
-let img = document.querySelector(".images");
+let images = document.querySelector(".images");
 
-const timedSlide = (i) => {
-  setTimeout(() => {
-    slideImg(img, 1);
-  }, 5000 * i);
+const timedSlide = (imgs) => {
+  this.timeout = setTimeout(() => {
+    slideImg(imgs, 1);
+    timedSlide(imgs);
+  }, 5000);
 }
 
-for (let i = 1; i < 5; i++) {
-  timedSlide(i);
-}
+timedSlide(images);
