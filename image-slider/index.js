@@ -46,10 +46,10 @@ circles.forEach((circle, index) => {
     document.querySelector(".images").style.right = startingPoints[index];
     clearCircleBackgrounds();
     document.getElementById(circle).style.backgroundColor = "gray";
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       target = index;
       timedSlide(images);
-    }, 15000);
+    }, 10000);
   };
 });
 
@@ -60,6 +60,6 @@ const timedSlide = (imgs) => {
     slideImg(imgs, 1);
     timedSlide(imgs);
   }, 5000);
-}
+};
 
 timedSlide(images);
